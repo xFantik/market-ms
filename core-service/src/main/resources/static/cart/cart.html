@@ -1,0 +1,42 @@
+<div>
+    <p></p>
+    <h3>Корзина</h3>
+    <table class="table">
+        <thead>
+        <tr>
+            <td>Название</td>
+            <td>Цена</td>
+            <td>Количество</td>
+            <td>Стоимость</td>
+            <td></td>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr ng-repeat="s in cartList">
+            <td>{{s.title}}</td>
+            <td>{{s.price}}р.</td>
+            <td>
+                <button class="btn btn-outline-info" ng-click="addToCart(s.id, -1)">-</button>
+                {{s.count}}шт.
+                <button class="btn btn-outline-info" ng-click="addToCart(s.id, 1)">+</button>
+            </td>
+            <td>{{s.cost}}р.</td>
+            <td>            </td>
+        <thead>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>Итоговая стоимость</td>
+            <td>{{total}}р.</td>
+            <td>
+                <button class="btn btn-primary" ng-click="createOrder()">Оформить заказ</button>
+            </td>
+        </tr>
+        </thead>
+        </tbody>
+    </table>
+    <p></p>
+
+
+</div>
