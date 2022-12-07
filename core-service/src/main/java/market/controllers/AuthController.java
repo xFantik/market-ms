@@ -1,7 +1,11 @@
-package ru.pb.market.controllers;
+package market.controllers;
 
 
 import lombok.RequiredArgsConstructor;
+import market.data.User;
+import market.exceptions.AppError;
+import market.services.UserService;
+import market.utils.JwtTokenUtil;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -11,12 +15,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import ru.pb.market.data.User;
-import ru.pb.market.dto.JwtRequest;
-import ru.pb.market.dto.JwtResponse;
-import ru.pb.market.exceptions.AppError;
-import ru.pb.market.services.UserService;
-import ru.pb.market.utils.JwtTokenUtil;
+import ru.pb.market.JwtRequest;
+import ru.pb.market.JwtResponse;
+
 
 @RestController
 @RequiredArgsConstructor
@@ -37,7 +38,7 @@ public class AuthController {
         UserDetails userDetails = userService.loadUserByUsername(authRequest.getUsername());
         String token = jwtTokenUtil.generateToken(userDetails);
 
-        return ResponseEntity.ok(new JwtResponse(token, userDetails.getAuthorities()));
+        return ResponseEntity.ok(new JwtResponse(token, userDetails.getAuthorities().stream().map(grantedAuthority -> grantedAuthority.getAuthority()).toList()));
     }
     @PostMapping("/registration")
     public void createUser(@RequestBody User user) {

@@ -1,5 +1,5 @@
 angular.module('market-front').controller('createProductController', function ($scope, $http, $location) {
-    const contextPath = 'http://' + window.location.hostname + ':' + window.location.port + '/market/';
+    const contextPath = 'http://' + window.location.hostname + ':' + window.location.port + '/market-core/';
 
     $scope.createProduct = function () {
         if ($scope.new_product == null) {

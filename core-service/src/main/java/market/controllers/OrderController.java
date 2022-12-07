@@ -1,12 +1,11 @@
-package ru.pb.market.controllers;
+package market.controllers;
 
 import lombok.RequiredArgsConstructor;
+import market.services.OrderService;
+import market.utils.JwtTokenUtil;
 import org.springframework.web.bind.annotation.*;
-import ru.pb.market.dto.OrderDto;
-import ru.pb.market.dto.ProductInCartDto;
-import ru.pb.market.services.CartService;
-import ru.pb.market.services.OrderService;
-import ru.pb.market.utils.JwtTokenUtil;
+import ru.pb.market.OrderDto;
+import ru.pb.market.ProductInCartDto;
 
 import java.util.List;
 import java.util.Map;
@@ -22,6 +21,7 @@ public class OrderController {
 
     @GetMapping("")
     public List<OrderDto> getOrders(@RequestHeader Map<String, String> headers) {
+        System.out.println(headers);
         return orderService.getOrders(getUserNameFromHeaders(headers));
     }
 

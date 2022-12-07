@@ -1,19 +1,21 @@
-package ru.pb.market.services;
+package market.services;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import market.converters.ProductConverter;
+import market.data.Order;
+import market.data.OrderProduct;
+import market.data.User;
+import market.exceptions.EmptyCartException;
+import market.integrations.CartServiceIntegration;
+import market.repositories.OrderProductRepository;
+import market.repositories.OrderRepository;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
-import ru.pb.market.converters.ProductConverter;
-import ru.pb.market.data.Order;
-import ru.pb.market.data.OrderProduct;
-import ru.pb.market.data.User;
-import ru.pb.market.dto.OrderDto;
-import ru.pb.market.dto.ProductInCartDto;
-import ru.pb.market.exceptions.EmptyCartException;
-import ru.pb.market.repositories.OrderProductRepository;
-import ru.pb.market.repositories.OrderRepository;
+import ru.pb.market.OrderDto;
+import ru.pb.market.ProductInCartDto;
+
 
 import java.util.List;
 
@@ -30,7 +32,7 @@ public class OrderService {
     private final OrderRepository orderRepository;
     private final OrderProductRepository orderProductRepository;
     private final UserService userService;
-    private final CartService cartService;
+    private final CartServiceIntegration cartServiceIntegration;
     private final ProductConverter productConverter;
     private final ProductService productService;
 
@@ -40,7 +42,7 @@ public class OrderService {
     @Transactional
     public List<OrderDto> getOrders(String username) {
         User u = userService.findUserByName(username).get();
-        return orderRepository.getOrderByOwnerIs(u).stream().map(order -> new OrderDto(order.getId(), order.getTotalCost(), order.getOwner(), order.getCreatedAt())).toList();
+        return orderRepository.getOrderByOwnerIs(u).stream().map(order -> new OrderDto(order.getId(), order.getTotalCost(), order.getOwner().getId(), order.getCreatedAt())).toList();
     }
 
 
@@ -58,8 +60,11 @@ public class OrderService {
 
     @Transactional
     public Long createOrder(String userName) {
-        List<ProductInCartDto> productsInCartDtoList = cartService.get(userName);
-        cartService.clearCart(userName);
+        List<ProductInCartDto> productsInCartDtoList = cartServiceIntegration.get(userName);
+
+        System.out.println(productsInCartDtoList);
+
+
         if (productsInCartDtoList.size() == 0) {
             throw new EmptyCartException("Корзина пуста");
         }
@@ -76,6 +81,7 @@ public class OrderService {
 
         order.setOrderProducts(orderProductsList);
         orderRepository.save(order);
+        cartServiceIntegration.clearCart(userName);
 
         return order.getId();
 

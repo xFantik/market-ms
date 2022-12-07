@@ -1,4 +1,4 @@
-package market.exceptions;
+package ru.pb.market.exceptions;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

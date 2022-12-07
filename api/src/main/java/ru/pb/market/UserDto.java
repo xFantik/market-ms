@@ -1,14 +1,9 @@
-package ru.pb.market.dto;
+package ru.pb.market;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import ru.pb.market.data.Role;
 
 import java.util.List;
 
-@Getter
-@AllArgsConstructor
+
 public class UserDto {
     private Long id;
 
@@ -16,10 +11,34 @@ public class UserDto {
 
     private String email;
 
-    private List<Role> roles;
+    private List<String> roles;
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public List<String> getRoles() {
+        return roles;
+    }
+
+    public UserDto(Long id, String username, String email, List<String> roles) {
+        this.id = id;
+        this.username = username;
+        this.email = email;
+        this.roles = roles;
+    }
 
 
-    public UserDto(String name, String email, List<Role> roles) {
+
+    public UserDto(String name, String email, List<String> roles) {
         this.username = name;
         this.email = email;
         this.roles = roles;

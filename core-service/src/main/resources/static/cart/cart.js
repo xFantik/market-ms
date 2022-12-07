@@ -1,5 +1,5 @@
 angular.module('market-front').controller('cartController', function ($scope, $http, $location, $localStorage) {
-    const contextPath = 'http://' + window.location.hostname + ':' + window.location.port + '/market/api/v1';
+    const contextPath = 'http://' + window.location.hostname + ':' + '8190' + '/market-cart/api/v1';
 
     $scope.loadCart = function () {
         if ($scope.isUserLoggedIn()) {
@@ -58,14 +58,14 @@ angular.module('market-front').controller('cartController', function ($scope, $h
     $scope.clearUser = function () {
         delete $localStorage.webMarketUser;
         $http.defaults.headers.common.Authorization = '';
-        window.location.href = 'http://' + window.location.hostname + ':' + window.location.port + '/market';
+        window.location.href = 'http://' + window.location.hostname + ':' + window.location.port + '/market-core';
     };
 
     $scope.createOrder = function (){
         if ($scope.isUserLoggedIn()) {
 
             $http({
-                url: contextPath + '/order/create',
+                url: 'http://' + window.location.hostname + ':' + '8189' + '/market-core/api/v1' + '/order/create',
                 method: 'POST',
                 params: {
                 }

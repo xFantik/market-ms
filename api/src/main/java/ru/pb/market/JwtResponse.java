@@ -1,20 +1,30 @@
-package ru.pb.market.dto;
+package ru.pb.market;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import org.springframework.security.core.GrantedAuthority;
 
-import java.util.Collection;
 import java.util.List;
-
-@Data
 
 public class JwtResponse {
     private String token;
     private List<String> roles;
 
-    public JwtResponse(String token, Collection<? extends GrantedAuthority> authorities) {
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
         this.token = token;
-        this.roles = authorities.stream().map(Object::toString).toList();
+    }
+
+    public List<String> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<String> roles) {
+        this.roles = roles;
+    }
+
+    public JwtResponse(String token, List<String> roles) {
+        this.token = token;
+        this.roles = roles;
     }
 }

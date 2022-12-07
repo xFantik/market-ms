@@ -1,7 +1,13 @@
-package ru.pb.market.services;
+package market.services;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import market.converters.ProductConverter;
+import market.data.Product;
+import market.exceptions.ResourceNotFoundException;
+import market.repositories.ProductRepository;
+import market.repositories.specification.ProductSpecification;
+import market.validators.ProductValidator;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.jpa.domain.Specification;
@@ -9,13 +15,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.ResponseStatus;
-import ru.pb.market.converters.ProductConverter;
-import ru.pb.market.dto.ProductDto;
-import ru.pb.market.exceptions.ResourceNotFoundException;
-import ru.pb.market.repositories.ProductRepository;
-import ru.pb.market.data.Product;
-import ru.pb.market.repositories.specification.ProductSpecification;
-import ru.pb.market.validators.ProductValidator;
+import ru.pb.market.ProductDto;
 
 import java.util.List;
 @Component

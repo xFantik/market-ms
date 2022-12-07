@@ -1,6 +1,12 @@
-package ru.pb.market.services;
+package market.services;
 
 import lombok.RequiredArgsConstructor;
+import market.data.Role;
+import market.data.User;
+import market.exceptions.ResourceNotFoundException;
+import market.exceptions.UserAlreadyExistException;
+import market.repositories.RoleRepository;
+import market.repositories.UserRepository;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -9,13 +15,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.pb.market.data.Role;
-import ru.pb.market.data.User;
-import ru.pb.market.dto.UserDto;
-import ru.pb.market.exceptions.ResourceNotFoundException;
-import ru.pb.market.exceptions.UserAlreadyExistException;
-import ru.pb.market.repositories.RoleRepository;
-import ru.pb.market.repositories.UserRepository;
+import ru.pb.market.UserDto;
+
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -36,7 +37,7 @@ public class UserService implements UserDetailsService {
     }
 
     public List<UserDto> getAllUsers() {
-        return userRepository.findAll().stream().map(user -> new UserDto(user.getUsername(), user.getEmail(), user.getRoles())).toList();
+        return userRepository.findAll().stream().map(user -> new UserDto(user.getUsername(), user.getEmail(), user.getRoles().stream().map(role -> role.getName()).toList())).toList();
     }
 
     @Override
@@ -67,7 +68,7 @@ public class UserService implements UserDetailsService {
         User user = userRepository.findById(userDto.getId()).orElseThrow(() -> new ResourceNotFoundException("User with id " + userDto.getId() + " not found"));
         user.setUsername(userDto.getUsername());
         user.setEmail(userDto.getEmail());
-        user.setRoles(userDto.getRoles());
+        user.setRoles(userDto.getRoles().stream().map(role -> roleRepository.findRoleByName("ROLE_USER").get()).collect(Collectors.toList()));
     }
 
 

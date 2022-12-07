@@ -1,4 +1,4 @@
-package ru.pb.market.config;
+package market.config;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -7,14 +7,12 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.HttpStatusEntryPoint;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import ru.pb.market.services.UserService;
 
 @Configuration
 @RequiredArgsConstructor
@@ -35,7 +33,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
                 .antMatchers(HttpMethod.GET, "/api/v1/products/**").permitAll()
                 .antMatchers("/api/v1/products/**").hasAnyRole("ADMIN", "MANAGER")
-                .antMatchers("/api/v1/cart/**").authenticated()
                 .antMatchers("/api/v1/orders/**").authenticated()
 
 

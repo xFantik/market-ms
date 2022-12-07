@@ -25,17 +25,17 @@
             }).when('/cart', {
             templateUrl: 'cart/cart.html',
             controller: 'cartController'
-            })
+        })
             .when('/orders', {
-            templateUrl: 'orders/orders.html',
-            controller: 'orderController'
+                templateUrl: 'orders/orders.html',
+                controller: 'orderController'
             }).when('/order_info/:orderId', {
             templateUrl: 'order_info/order_info.html',
             controller: 'orderInfoController'
-            }).when('/register_user', {
-                templateUrl: 'register_user/register_user.html',
-                controller: 'registerUserController'
-            })
+        }).when('/register_user', {
+            templateUrl: 'register_user/register_user.html',
+            controller: 'registerUserController'
+        })
             .otherwise({
                 redirectTo: '/'
             });
@@ -44,15 +44,30 @@
     }
 
     function run($rootScope, $http, $localStorage) {
+
         if ($localStorage.webMarketUser) {
-            $http.defaults.headers.common.Authorization = 'Bearer ' + $localStorage.webMarketUser.token;
+            try {
+                let jwt = $localStorage.webMarketUser.token;
+                let payload = JSON.parse(atob(jwt.split('.')[1]));
+                let currentTime = parseInt(new Date().getTime() / 1000);
+                if (currentTime > payload.exp) {
+                    console.log("Token is expired!!!");
+                    delete $localStorage.webMarketUser;
+                    $http.defaults.headers.common.Authorization = '';
+                }
+            } catch (e) {
+            }
+
+            if ($localStorage.webMarketUser) {
+                $http.defaults.headers.common.Authorization = 'Bearer ' + $localStorage.webMarketUser.token;
+            }
         }
     }
 })();
 
 angular.module('market-front').controller('indexController', function ($rootScope, $scope, $http, $localStorage) {
     // const contextPath = 'http://localhost:8189/market';
-    const contextPath = 'http://' + window.location.hostname + ':' + window.location.port + '/market'
+    const contextPath = 'http://' + window.location.hostname + ':' + window.location.port + '/market-core'
 
     $scope.tryToAuth = function () {
         $http.post(contextPath + '/auth', $scope.user)
@@ -68,6 +83,7 @@ angular.module('market-front').controller('indexController', function ($rootScop
                     $scope.username = $localStorage.webMarketUser.username
                     $scope.user.username = null;
                     $scope.user.password = null;
+                    location.reload();
                 }
             }, function errorCallback(response) {
                 alert(response.data.message);
@@ -83,12 +99,13 @@ angular.module('market-front').controller('indexController', function ($rootScop
         if ($scope.user.password) {
             $scope.user.password = null;
         }
-        window.location.href = 'http://' + window.location.hostname + ':' + window.location.port + '/market';
+        window.location.href = 'http://' + window.location.hostname + ':' + window.location.port + '/market-core';
     };
 
     $scope.clearUser = function () {
         delete $localStorage.webMarketUser;
         $http.defaults.headers.common.Authorization = '';
+        location.reload();
     };
 
     $rootScope.isUserLoggedIn = function () {

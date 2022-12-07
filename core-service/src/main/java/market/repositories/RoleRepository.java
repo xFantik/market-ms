@@ -1,8 +1,8 @@
-package ru.pb.market.repositories;
+package market.repositories;
 
+import market.data.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
-import ru.pb.market.data.Role;
-import ru.pb.market.data.User;
+
 
 import java.util.Optional;
 

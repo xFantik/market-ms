@@ -1,6 +1,6 @@
 
 angular.module('market-front').controller('storeController', function ($rootScope, $scope, $http, $location, $localStorage) {
-    const contextPath = 'http://' + window.location.hostname + ':' + window.location.port + '/market/api/v1';
+    const contextPath = 'http://' + window.location.hostname + ':' + window.location.port + '/market-core/api/v1';
     $scope.currentPage = 1
 
     $input = document.getElementById('input_min-id');
@@ -82,7 +82,8 @@ angular.module('market-front').controller('storeController', function ($rootScop
             console.log(productId);
 
             $http({
-                url: contextPath + '/cart',
+                headers: { 'Authorization': 'Bearer ' + $localStorage.webMarketUser.token },
+                url: 'http://' + window.location.hostname + ':8190' + '/market-cart/api/v1/cart',
                 method: 'POST',
                 params: {
                     productId: productId

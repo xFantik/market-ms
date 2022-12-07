@@ -1,13 +1,11 @@
-package ru.pb.market.converters;
+package market.converters;
 
+import market.data.Order;
+import market.data.OrderProduct;
+import market.data.Product;
 import org.springframework.stereotype.Component;
-import ru.pb.market.data.Order;
-import ru.pb.market.data.OrderProduct;
-import ru.pb.market.data.Product;
-import ru.pb.market.dto.ProductDto;
-import ru.pb.market.dto.ProductInCartDto;
-
-import java.util.stream.Collectors;
+import ru.pb.market.ProductDto;
+import ru.pb.market.ProductInCartDto;
 
 @Component
 public class ProductConverter {

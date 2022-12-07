@@ -1,4 +1,4 @@
-package ru.pb.market.exceptions;
+package market.exceptions;
 
 import io.jsonwebtoken.ExpiredJwtException;
 import org.springframework.http.HttpStatus;
@@ -34,14 +34,14 @@ public class GlobalExceptionHandler {
     public ResponseEntity<AppError> userNameIsBusy(UserAlreadyExistException e){
         return new ResponseEntity<>(new AppError(HttpStatus.BAD_REQUEST.value(), e.getMessage()), HttpStatus.BAD_REQUEST);
     }
-    @ExceptionHandler
-    public ResponseEntity<AppError> emptyCart(EmptyCartException e){
-        return new ResponseEntity<>(new AppError(HttpStatus.BAD_REQUEST.value(), e.getMessage()), HttpStatus.BAD_REQUEST);
-    }
 
     @ExceptionHandler
     public ResponseEntity<AppError> tokenExpired(ExpiredJwtException e){
         return new ResponseEntity<>(new AppError(HttpStatus.UNAUTHORIZED.value(), "Время авторизации истекло. Пожалуйста авторизуйтесь еще раз"), HttpStatus.UNAUTHORIZED);
     }
 
+    @ExceptionHandler
+    public ResponseEntity<AppError> emptyCart(EmptyCartException e){
+        return new ResponseEntity<>(new AppError(HttpStatus.BAD_REQUEST.value(), e.getMessage()), HttpStatus.BAD_REQUEST);
+    }
 }

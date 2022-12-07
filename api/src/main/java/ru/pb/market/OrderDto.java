@@ -1,26 +1,42 @@
-package ru.pb.market.dto;
+package ru.pb.market;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import org.hibernate.annotations.CreationTimestamp;
-import ru.pb.market.data.Product;
-import ru.pb.market.data.User;
 
-import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.List;
 
-@Getter
-@AllArgsConstructor
 public class OrderDto {
+
+    public OrderDto() {
+    }
 
     private Long id;
 
     private Integer totalCost;
 
-    private User owner;
+    private Long ownerId;
 
     private LocalDateTime createdAt;
 
+    public Long getId() {
+        return id;
+    }
+
+    public Integer getTotalCost() {
+        return totalCost;
+    }
+
+    public Long getOwnerId() {
+        return ownerId;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public OrderDto(Long id, Integer totalCost, Long ownerId, LocalDateTime createdAt) {
+        this.id = id;
+        this.totalCost = totalCost;
+        this.ownerId = ownerId;
+        this.createdAt = createdAt;
+    }
 }
 

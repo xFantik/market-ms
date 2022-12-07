@@ -1,12 +1,12 @@
-package market;
+package ru.pb.market;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MarketCoreApplication {
+public class MarketCartApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(MarketCoreApplication.class, args);
+		SpringApplication.run(MarketCartApplication.class, args);
 	}
 
 }

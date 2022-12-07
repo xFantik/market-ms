@@ -1,5 +1,5 @@
 angular.module('market-front').controller('orderInfoController', function ($scope, $http, $location, $routeParams, $localStorage) {
-    const contextPath = 'http://' + window.location.hostname + ':' + window.location.port + '/market/';
+    const contextPath = 'http://' + window.location.hostname + ':' + window.location.port + '/market-core/';
     $scope.orderId=$routeParams.orderId;
     $scope.loadOrder = function () {
         if ($scope.isUserLoggedIn()) {

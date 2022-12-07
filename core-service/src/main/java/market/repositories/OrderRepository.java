@@ -1,9 +1,10 @@
-package ru.pb.market.repositories;
+package market.repositories;
 
 
+
+import market.data.Order;
+import market.data.User;
 import org.springframework.data.jpa.repository.JpaRepository;
-import ru.pb.market.data.Order;
-import ru.pb.market.data.User;
 
 import java.util.List;
 

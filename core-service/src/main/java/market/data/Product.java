@@ -1,8 +1,6 @@
-package ru.pb.market.data;
+package market.data;
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 import javax.persistence.*;
 

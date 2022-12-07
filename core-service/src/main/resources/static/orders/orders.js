@@ -1,5 +1,5 @@
 angular.module('market-front').controller('orderController', function ($scope, $http, $location, $localStorage) {
-    const contextPath = 'http://' + window.location.hostname + ':' + window.location.port + '/market/api/v1';
+    const contextPath = 'http://' + window.location.hostname + ':' + window.location.port + '/market-core/api/v1';
 
     $scope.loadOrders = function () {
         if ($scope.isUserLoggedIn()) {

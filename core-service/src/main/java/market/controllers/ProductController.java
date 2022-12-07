@@ -1,11 +1,13 @@
-package ru.pb.market.controllers;
+package market.controllers;
 
 import lombok.RequiredArgsConstructor;
+
+import market.data.Product;
+import market.services.ProductService;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
-import ru.pb.market.data.Product;
-import ru.pb.market.dto.ProductDto;
-import ru.pb.market.services.ProductService;
+import ru.pb.market.ProductDto;
+
 
 import java.util.List;
 
@@ -20,10 +22,10 @@ public class ProductController {
 
     @GetMapping("")
     public Page<ProductDto> find(@RequestParam(defaultValue = "1") Integer page,
-                              @RequestParam(required = false) Integer minPrice,
-                              @RequestParam(required = false) Integer maxPrice,
-                              @RequestParam(required = false) String partName,
-                              @RequestParam(defaultValue = "true") boolean active) {
+                                 @RequestParam(required = false) Integer minPrice,
+                                 @RequestParam(required = false) Integer maxPrice,
+                                 @RequestParam(required = false) String partName,
+                                 @RequestParam(defaultValue = "true") boolean active) {
         return productService.find(page, minPrice, maxPrice, partName, active);
     }
 

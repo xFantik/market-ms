@@ -1,8 +1,9 @@
-package ru.pb.market.validators;
+package market.validators;
 
+import market.exceptions.ValidateException;
 import org.springframework.stereotype.Component;
-import ru.pb.market.dto.ProductDto;
-import ru.pb.market.exceptions.ValidateException;
+import ru.pb.market.ProductDto;
+
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,10 +1,11 @@
-package ru.pb.market.controllers;
+package market.controllers;
 
 import lombok.RequiredArgsConstructor;
+import market.data.User;
+import market.services.UserService;
 import org.springframework.web.bind.annotation.*;
-import ru.pb.market.data.User;
-import ru.pb.market.dto.UserDto;
-import ru.pb.market.services.UserService;
+import ru.pb.market.UserDto;
+
 
 import java.util.List;
 

@@ -1,8 +1,10 @@
-package ru.pb.market.repositories;
+package market.repositories;
 
+
+
+import market.data.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
-import ru.pb.market.data.Product;
 
 import java.util.List;
 

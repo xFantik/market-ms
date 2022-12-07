@@ -1,11 +1,11 @@
-package market.services;
+package ru.pb.market.services;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
-import ru.pb.market.converters.ProductConverter;
-import ru.pb.market.dto.ProductInCartDto;
+import ru.pb.market.ProductInCartDto;
+import ru.pb.market.integrations.ProductServiceIntegration;
 
 import javax.annotation.PostConstruct;
 import java.util.HashMap;
@@ -23,10 +23,7 @@ public class CartService {
 
     private HashMap<String, HashMap<Long, Integer>> carts;
 
-    private final ProductService productService;
-
-    private final ProductConverter productConverter;
-
+    private final ProductServiceIntegration productServiceIntegration;
 
 
     @PostConstruct
@@ -36,11 +33,11 @@ public class CartService {
 
     public void addProduct(String username, long productId, int count) {
         HashMap<Long, Integer> products = getCart(username);
-        log.info("Добавили в корзину {} {}", count, productService.getTitleById(productId));
+        log.info("Добавили в корзину {} {}", count, productServiceIntegration.findById(productId).getTitle());
         products.put(productId, products.getOrDefault(productId, 0) + count);
         if (products.get(productId) <= 0) {
             products.remove(productId);
-            log.info("В корзине не осталось {}, убрали совсем", productService.getTitleById(productId));
+            log.info("В корзине не осталось {}, убрали совсем", productServiceIntegration.findById(productId).getTitle());
         }
     }
 
@@ -53,10 +50,10 @@ public class CartService {
     public void removeProduct(String username, long productId, int count) {
         HashMap<Long, Integer> products = getCart(username);
         products.put(productId, products.getOrDefault(productId, 0) - count);
-        log.info("Убрали из корзины {} {}", count, productService.getTitleById(productId));
+        log.info("Убрали из корзины {} {}", count, productServiceIntegration.findById(productId).getTitle());
         if (products.get(productId) <= 0) {
             products.remove(productId);
-            log.info("В корзине не осталось {}, убрали совсем", productService.getTitleById(productId));
+            log.info("В корзине не осталось {}, убрали совсем", productServiceIntegration.findById(productId).getTitle());
         }
     }
 
@@ -66,8 +63,8 @@ public class CartService {
         Long[] ids = new Long[products.size()];
         products.keySet().toArray(ids);
 
-        List<ProductInCartDto> productsByIdIn = productService.getProductsByIdIn(ids).stream()
-                .map(product -> productConverter.entityToDtoInCart(product, products.get(product.getId())))
+        List<ProductInCartDto> productsByIdIn = productServiceIntegration.getProductsByIdIn(ids).stream().
+                map(productDto -> new ProductInCartDto(productDto.getId(), productDto.getTitle(), productDto.getPrice(), products.get(productDto.getId())))
                 .toList();
 
 

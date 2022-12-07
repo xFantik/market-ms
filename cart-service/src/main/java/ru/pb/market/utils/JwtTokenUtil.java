@@ -1,4 +1,4 @@
-package market.utils;
+package ru.pb.market.utils;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

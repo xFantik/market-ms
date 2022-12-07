@@ -1,4 +1,4 @@
-package ru.pb.market.data;
+package market.data;
 
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;

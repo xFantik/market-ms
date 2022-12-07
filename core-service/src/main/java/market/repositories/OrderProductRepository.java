@@ -1,8 +1,8 @@
-package ru.pb.market.repositories;
+package market.repositories;
 
 
+import market.data.OrderProduct;
 import org.springframework.data.jpa.repository.JpaRepository;
-import ru.pb.market.data.OrderProduct;
 
 public interface OrderProductRepository extends JpaRepository<OrderProduct, Long> {
 

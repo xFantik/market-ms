@@ -1,4 +1,4 @@
-package market.config;
+package ru.pb.market.configs;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.AuthenticationTrustResolver;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -14,13 +15,17 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.HttpStatusEntryPoint;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+
 @Configuration
 @RequiredArgsConstructor
 @Slf4j
-public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+public class SecurityConfig extends WebSecurityConfigurerAdapter{
 
 
     private final JwtRequestFilter jwtRequestFilter;
+
+
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -29,17 +34,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf().disable()       //Встроенная безопасноть, запрещающая обращаться к приложению из браузера (например для работы с thymeleaf)
                 .cors().disable()  // не будут отсеиваться запросы от других сервисов
                 .authorizeRequests()
-                //.antMatchers("/auth/**").anonymous()
 
-                .antMatchers(HttpMethod.GET, "/api/v1/products/**").permitAll()
-                .antMatchers("/api/v1/products/**").hasAnyRole("ADMIN", "MANAGER")
-                .antMatchers("/api/v1/cart/**").authenticated()
-                .antMatchers("/api/v1/orders/**").authenticated()
+//                .antMatchers("/api/v1/cart/**").authenticated()
 
-
-                .antMatchers(HttpMethod.GET, "/api/v1/users/**").hasAnyRole("ADMIN", "SUPERADMIN")
-                .antMatchers(HttpMethod.POST, "/api/v1/users/**").hasAnyRole("ADMIN", "SUPERADMIN")
-                .antMatchers(                "/api/v1/users/**").hasAnyRole("SUPERADMIN")
 
                 .anyRequest().permitAll()
                 .and()
@@ -53,6 +50,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                                                         ;
         http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
     }
+
 
     @Bean
     public BCryptPasswordEncoder passwordEncoder(){

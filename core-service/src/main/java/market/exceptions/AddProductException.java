@@ -1,4 +1,4 @@
-package ru.pb.market.exceptions;
+package market.exceptions;
 
 public class AddProductException extends RuntimeException{
 
