@@ -4,74 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da06fda5-32e4-45fa-acd3-91022afbbe5f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/core-service/src/main/java/market/integrations/CartServiceIntegration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="da06fda5-32e4-45fa-acd3-91022afbbe5f" name="Changes" comment="корзина в отдельном сервисе">
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/ru/pb/market/ProductListRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/ru/pb/market/JwtRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/ru/pb/market/JwtRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/ru/pb/market/JwtResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/ru/pb/market/JwtResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/ru/pb/market/OrderDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/ru/pb/market/OrderDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/ru/pb/market/ProductDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/ru/pb/market/ProductDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/ru/pb/market/ProductInCartDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/ru/pb/market/ProductInCartDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/ru/pb/market/UserDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/ru/pb/market/UserDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart-service/src/main/java/ru/pb/market/MarketCartApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/src/main/java/ru/pb/market/MarketCartApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart-service/src/main/java/ru/pb/market/configs/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/src/main/java/ru/pb/market/configs/AppConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart-service/src/main/java/ru/pb/market/configs/JwtRequestFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/src/main/java/ru/pb/market/configs/JwtRequestFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart-service/src/main/java/ru/pb/market/configs/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/src/main/java/ru/pb/market/configs/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart-service/src/main/java/ru/pb/market/controllers/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/src/main/java/ru/pb/market/controllers/CartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart-service/src/main/java/ru/pb/market/exceptions/AppError.java" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/src/main/java/ru/pb/market/exceptions/AppError.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart-service/src/main/java/ru/pb/market/exceptions/EmptyCartException.java" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/java/market/exceptions/EmptyCartException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart-service/src/main/java/ru/pb/market/exceptions/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/src/main/java/ru/pb/market/exceptions/GlobalExceptionHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cart-service/src/main/java/ru/pb/market/integrations/ProductServiceIntegration.java" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/src/main/java/ru/pb/market/integrations/ProductServiceIntegration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart-service/src/main/java/ru/pb/market/services/CartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/src/main/java/ru/pb/market/services/CartService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart-service/src/main/java/ru/pb/market/utils/JwtTokenUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/src/main/java/ru/pb/market/utils/JwtTokenUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/MarketCoreApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/java/market/MarketCoreApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/config/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/java/market/config/AppConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/config/JwtRequestFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/java/market/config/JwtRequestFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/java/market/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/java/market/controllers/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/controllers/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/java/market/controllers/OrderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/controllers/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/java/market/controllers/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/controllers/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/java/market/controllers/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/converters/ProductConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/java/market/converters/ProductConverter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/data/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/java/market/data/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/data/OrderProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/java/market/data/OrderProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/data/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/java/market/data/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/data/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/java/market/data/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/data/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/java/market/data/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/exceptions/AddProductException.java" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/java/market/exceptions/AddProductException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/exceptions/AppError.java" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/java/market/exceptions/AppError.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/exceptions/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/java/market/exceptions/GlobalExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/exceptions/ResourceNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/java/market/exceptions/ResourceNotFoundException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/exceptions/UserAlreadyExistException.java" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/java/market/exceptions/UserAlreadyExistException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/exceptions/ValidateException.java" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/java/market/exceptions/ValidateException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/repositories/OrderProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/java/market/repositories/OrderProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/repositories/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/java/market/repositories/OrderRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/repositories/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/java/market/repositories/ProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/repositories/RoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/java/market/repositories/RoleRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/java/market/repositories/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/repositories/specification/ProductSpecification.java" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/java/market/repositories/specification/ProductSpecification.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/services/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/java/market/services/OrderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/services/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/java/market/services/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/java/market/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/utils/JwtTokenUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/java/market/utils/JwtTokenUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/validators/ProductValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/java/market/validators/ProductValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/resources/application.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core-service/src/main/resources/static/cart/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/resources/static/cart/cart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core-service/src/main/resources/static/create_product/create_product.js" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/resources/static/create_product/create_product.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core-service/src/main/resources/static/edit_product/edit_product.js" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/resources/static/edit_product/edit_product.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core-service/src/main/resources/static/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/resources/static/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core-service/src/main/resources/static/order_info/order_info.js" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/resources/static/order_info/order_info.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core-service/src/main/resources/static/orders/orders.js" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/resources/static/orders/orders.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core-service/src/main/resources/static/register_user/register_user.js" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/resources/static/register_user/register_user.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core-service/src/main/resources/static/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/resources/static/store/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,6 +26,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="JpbToolWindowState">
@@ -206,8 +151,16 @@
       <updated>1670242142019</updated>
       <workItem from="1670242143543" duration="9123000" />
       <workItem from="1670319109474" duration="3876000" />
-      <workItem from="1670398982287" duration="5492000" />
+      <workItem from="1670398982287" duration="11205000" />
     </task>
+    <task id="LOCAL-00001" summary="корзина в отдельном сервисе">
+      <created>1670408124854</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1670408124855</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -235,6 +188,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="корзина в отдельном сервисе" />
+    <option name="LAST_COMMIT_MESSAGE" value="корзина в отдельном сервисе" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

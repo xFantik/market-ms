@@ -79,9 +79,7 @@ angular.module('market-front').controller('storeController', function ($rootScop
         // document.getElementById("error_text").style.visibility = 'hidden';
 
         if ($scope.isUserLoggedIn()){
-            console.log(productId);
-
-            $http({
+                  $http({
                 headers: { 'Authorization': 'Bearer ' + $localStorage.webMarketUser.token },
                 url: 'http://' + window.location.hostname + ':8190' + '/market-cart/api/v1/cart',
                 method: 'POST',

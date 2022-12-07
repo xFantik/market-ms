@@ -71,8 +71,8 @@ angular.module('market-front').controller('cartController', function ($scope, $h
                 }
 
             }).then(function (response) {
-                alert('Заказ создан')
-                $scope.loadCart();
+                window.location.href = 'http://' + window.location.hostname + ':' + window.location.port + '/market-core/#!/order_info/'+response.data;
+                alert('Заказ создан');
             }).catch(function (err) {
 
                 if (err.status===401) {

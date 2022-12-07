@@ -21,10 +21,17 @@ public class ProductServiceIntegration {
     }
 
     public List<ProductDto> getProductsByIdIn(Long[] ids) {
+
+//        ProductDto[] pr = restTemplate.getForObject(URI +"list",  ProductDto[].class, ids);
+//        System.out.println(pr);
+//        return Arrays.stream(pr).toList();
+
         List<ProductDto> result = new ArrayList<>();
         for (Long id : ids) {
             result.add(findById(id));
         }
         return result;
+
+
     }
 }

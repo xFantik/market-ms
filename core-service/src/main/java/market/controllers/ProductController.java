@@ -5,8 +5,10 @@ import lombok.RequiredArgsConstructor;
 import market.data.Product;
 import market.services.ProductService;
 import org.springframework.data.domain.Page;
+import org.springframework.security.core.parameters.P;
 import org.springframework.web.bind.annotation.*;
 import ru.pb.market.ProductDto;
+import ru.pb.market.ProductListRequest;
 
 
 import java.util.List;
@@ -51,7 +53,23 @@ public class ProductController {
     @GetMapping("/all")
     public List<Product> get() {
         return productService.getAllProducts();
-
     }
+
+//    @PostMapping("/list")
+//    public  void getListByIds(@RequestBody List<ProductListRequest> list){
+//        System.out.println(list);
+//
+//        for (ProductListRequest aLong : list) {
+//            System.out.println(aLong.getValue());
+//        }
+//        return null;
+
+//        pr.getIds();
+//        System.out.println( pr.getIds());
+//        return productService.getProductsByIdIn(( pr.getIds()));
+
+
+//    }
+
 
 }

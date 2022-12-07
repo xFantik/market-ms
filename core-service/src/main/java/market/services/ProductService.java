@@ -119,7 +119,7 @@ public class ProductService {
 
 
 
-    public List<Product> getProductsByIdIn(Long[] ids){
-        return productRepository.getProductByIdIn(ids);
+    public List<ProductDto> getProductsByIdIn(Long[] ids){
+        return productRepository.getProductByIdIn(ids).stream().map(product -> productConverter.entityToDto(product)).toList();
     }
 }
