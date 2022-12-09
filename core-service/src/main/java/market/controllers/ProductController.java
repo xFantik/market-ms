@@ -2,13 +2,11 @@ package market.controllers;
 
 import lombok.RequiredArgsConstructor;
 
-import market.data.Product;
+import market.entities.Product;
 import market.services.ProductService;
 import org.springframework.data.domain.Page;
-import org.springframework.security.core.parameters.P;
 import org.springframework.web.bind.annotation.*;
 import ru.pb.market.ProductDto;
-import ru.pb.market.ProductListRequest;
 
 
 import java.util.List;

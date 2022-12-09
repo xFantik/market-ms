@@ -1,6 +1,6 @@
 package market.repositories.specification;
 
-import market.data.Product;
+import market.entities.Product;
 import org.springframework.data.jpa.domain.Specification;
 
 public class ProductSpecification {

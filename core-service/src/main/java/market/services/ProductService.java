@@ -3,7 +3,7 @@ package market.services;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import market.converters.ProductConverter;
-import market.data.Product;
+import market.entities.Product;
 import market.exceptions.ResourceNotFoundException;
 import market.repositories.ProductRepository;
 import market.repositories.specification.ProductSpecification;

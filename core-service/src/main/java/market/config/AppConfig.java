@@ -6,7 +6,6 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.web.client.RestTemplate;
 
 @Configuration
-@PropertySource("secret.properties")
 public class AppConfig {
     @Bean
     public RestTemplate restTemplate() {

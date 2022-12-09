@@ -1,8 +1,8 @@
 package market.converters;
 
-import market.data.Order;
-import market.data.OrderProduct;
-import market.data.Product;
+import market.entities.Order;
+import market.entities.OrderProduct;
+import market.entities.Product;
 import org.springframework.stereotype.Component;
 import ru.pb.market.ProductDto;
 import ru.pb.market.ProductInCartDto;

@@ -31,11 +31,6 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<>(new AppError(HttpStatus.BAD_REQUEST.value(), e.getMessage()), HttpStatus.BAD_REQUEST);
     }
     @ExceptionHandler
-    public ResponseEntity<AppError> userNameIsBusy(UserAlreadyExistException e){
-        return new ResponseEntity<>(new AppError(HttpStatus.BAD_REQUEST.value(), e.getMessage()), HttpStatus.BAD_REQUEST);
-    }
-
-    @ExceptionHandler
     public ResponseEntity<AppError> tokenExpired(ExpiredJwtException e){
         return new ResponseEntity<>(new AppError(HttpStatus.UNAUTHORIZED.value(), "Время авторизации истекло. Пожалуйста авторизуйтесь еще раз"), HttpStatus.UNAUTHORIZED);
     }

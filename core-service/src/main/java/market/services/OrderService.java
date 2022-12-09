@@ -3,9 +3,8 @@ package market.services;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import market.converters.ProductConverter;
-import market.data.Order;
-import market.data.OrderProduct;
-import market.data.User;
+import market.entities.Order;
+import market.entities.OrderProduct;
 import market.exceptions.EmptyCartException;
 import market.integrations.CartServiceIntegration;
 import market.repositories.OrderProductRepository;
@@ -31,7 +30,6 @@ public class OrderService {
 
     private final OrderRepository orderRepository;
     private final OrderProductRepository orderProductRepository;
-    private final UserService userService;
     private final CartServiceIntegration cartServiceIntegration;
     private final ProductConverter productConverter;
     private final ProductService productService;
@@ -41,8 +39,7 @@ public class OrderService {
 
     @Transactional
     public List<OrderDto> getOrders(String username) {
-        User u = userService.findUserByName(username).get();
-        return orderRepository.getOrderByOwnerIs(u).stream().map(order -> new OrderDto(order.getId(), order.getTotalCost(), order.getOwner().getId(), order.getCreatedAt())).toList();
+        return orderRepository.getOrderByUsernameIs(username).stream().map(order -> new OrderDto(order.getId(), order.getTotalCost(), username, order.getCreatedAt())).toList();
     }
 
 
@@ -70,7 +67,7 @@ public class OrderService {
         }
 
         Order order = new Order();
-        order.setOwner(userService.findUserByName(userName).get());
+        order.setUsername(userName);
         order.setTotalCost(calculateTotalCost(productsInCartDtoList));
 
         List<OrderProduct> orderProductsList = productsInCartDtoList.stream().map(pro ->

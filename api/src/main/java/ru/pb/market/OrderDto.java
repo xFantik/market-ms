@@ -12,7 +12,7 @@ public class OrderDto {
 
     private Integer totalCost;
 
-    private Long ownerId;
+    private String username;
 
     private LocalDateTime createdAt;
 
@@ -24,18 +24,18 @@ public class OrderDto {
         return totalCost;
     }
 
-    public Long getOwnerId() {
-        return ownerId;
+    public String  getUsername() {
+        return username;
     }
 
     public LocalDateTime getCreatedAt() {
         return createdAt;
     }
 
-    public OrderDto(Long id, Integer totalCost, Long ownerId, LocalDateTime createdAt) {
+    public OrderDto(Long id, Integer totalCost, String username, LocalDateTime createdAt) {
         this.id = id;
         this.totalCost = totalCost;
-        this.ownerId = ownerId;
+        this.username = username;
         this.createdAt = createdAt;
     }
 }

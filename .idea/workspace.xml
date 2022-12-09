@@ -5,13 +5,82 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da06fda5-32e4-45fa-acd3-91022afbbe5f" name="Changes" comment="корзина в отдельном сервисе">
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/ru/pb/market/ProductListRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth-service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/ru/pb/market/auth/MarketAuthApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/ru/pb/market/auth/configs/AppConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/ru/pb/market/auth/exceptions/AppError.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/ru/pb/market/auth/exceptions/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth-service/src/main/resources/application.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-service/src/main/java/ru/pb/market/front/MarketFrontApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-service/src/main/resources/application.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway-service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway-service/src/main/java/ru/pb/market/gateway/JwtAuthFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway-service/src/main/java/ru/pb/market/gateway/JwtUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway-service/src/main/java/ru/pb/market/gateway/MarketGatewayApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway-service/src/main/java/ru/pb/market/gateway/configs/AppConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gateway-service/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/ru/pb/market/OrderDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/ru/pb/market/OrderDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart-service/src/main/java/ru/pb/market/configs/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/src/main/java/ru/pb/market/configs/AppConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart-service/src/main/java/ru/pb/market/configs/JwtRequestFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart-service/src/main/java/ru/pb/market/configs/SecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart-service/src/main/java/ru/pb/market/controllers/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/src/main/java/ru/pb/market/controllers/CartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart-service/src/main/java/ru/pb/market/exceptions/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/src/main/java/ru/pb/market/exceptions/GlobalExceptionHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cart-service/src/main/java/ru/pb/market/integrations/ProductServiceIntegration.java" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/src/main/java/ru/pb/market/integrations/ProductServiceIntegration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart-service/src/main/java/ru/pb/market/utils/JwtTokenUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart-service/src/main/resources/secret.properties" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/resources/secret.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/config/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/java/market/config/AppConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/config/JwtRequestFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/ru/pb/market/auth/configs/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/ru/pb/market/auth/controllers/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/controllers/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/java/market/controllers/OrderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/controllers/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/java/market/controllers/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/controllers/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/converters/ProductConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/java/market/converters/ProductConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/data/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/java/market/entities/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/data/OrderProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/java/market/entities/OrderProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/data/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/java/market/entities/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/data/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/ru/pb/market/auth/entities/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/data/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/ru/pb/market/auth/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/exceptions/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/java/market/exceptions/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/exceptions/UserAlreadyExistException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/integrations/CartServiceIntegration.java" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/java/market/integrations/CartServiceIntegration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/repositories/OrderProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/java/market/repositories/OrderProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/repositories/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/java/market/repositories/OrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/repositories/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/java/market/repositories/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/repositories/RoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/ru/pb/market/auth/repositoties/RoleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/ru/pb/market/auth/repositoties/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/repositories/specification/ProductSpecification.java" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/java/market/repositories/specification/ProductSpecification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/services/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/java/market/services/OrderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/services/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/java/market/services/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core-service/src/main/resources/static/cart/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/resources/static/cart/cart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core-service/src/main/resources/static/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/resources/static/store/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/ru/pb/market/auth/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/utils/JwtTokenUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/ru/pb/market/auth/utils/JwtTokenUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-service/src/main/resources/db/migration/V2__add_users.sql" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/resources/db/migration/V1__add_users.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-service/src/main/resources/db/migration/V3__create_orders.sql" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/resources/db/migration/V2__create_orders.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-service/src/main/resources/secret.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-service/src/main/resources/secret.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-service/src/main/resources/static/cart/cart.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-service/src/main/resources/static/cart/cart.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-service/src/main/resources/static/cart/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-service/src/main/resources/static/cart/cart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-service/src/main/resources/static/create_product/create_product.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-service/src/main/resources/static/create_product/create_product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-service/src/main/resources/static/create_product/create_product.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-service/src/main/resources/static/create_product/create_product.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-service/src/main/resources/static/edit_product/edit_product.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-service/src/main/resources/static/edit_product/edit_product.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-service/src/main/resources/static/edit_product/edit_product.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-service/src/main/resources/static/edit_product/edit_product.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-service/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-service/src/main/resources/static/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-service/src/main/resources/static/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-service/src/main/resources/static/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-service/src/main/resources/static/order_info/order_info.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-service/src/main/resources/static/order_info/order_info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-service/src/main/resources/static/order_info/order_info.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-service/src/main/resources/static/order_info/order_info.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-service/src/main/resources/static/orders/orders.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-service/src/main/resources/static/orders/orders.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-service/src/main/resources/static/orders/orders.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-service/src/main/resources/static/orders/orders.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-service/src/main/resources/static/register_user/register_user.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-service/src/main/resources/static/register_user/register_user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-service/src/main/resources/static/register_user/register_user.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-service/src/main/resources/static/register_user/register_user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-service/src/main/resources/static/store/store.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-service/src/main/resources/static/store/store.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-service/src/main/resources/static/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-service/src/main/resources/static/store/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-service/src/main/resources/static/welcome/welcome.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-service/src/main/resources/static/welcome/welcome.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-service/src/main/resources/static/welcome/welcome.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-service/src/main/resources/static/welcome/welcome.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,46 +127,50 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/IdeaProjects/market-ms/cart-service/src/main/resources&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.import&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;7319982fe5a9b511e1d0667e32170261&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "openjdk-17",
+    "last_opened_file_path": "C:/IdeaProjects/market-ms/front-service/src/main/resources",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "editor.preferences.import",
+    "spring.configuration.checksum": "e1a83eef63766673ac5f9d4d785eb2f3"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\IdeaProjects\market-ms\cart-service\src\main\resources" />
-      <recent name="C:\IdeaProjects\market-ms\cart-service\src\main\java\ru\pb\market" />
-      <recent name="C:\IdeaProjects\market-ms\core-service\src\main\resources" />
-      <recent name="C:\IdeaProjects\market-ms\core-service\src\main\java" />
-      <recent name="C:\IdeaProjects\market-ms\api\src\main\java\ru\pb\market" />
+      <recent name="C:\IdeaProjects\market-ms\front-service\src\main\resources" />
+      <recent name="C:\IdeaProjects\market-ms\auth-service\src\main\java\ru\pb\market\auth" />
+      <recent name="C:\IdeaProjects\market-ms\auth-service\src\main\java\ru\pb\market\auth\configs\exceptions" />
+      <recent name="C:\IdeaProjects\market-ms\auth-service\src\main\resources" />
+      <recent name="C:\IdeaProjects\market-ms\gateway-service\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\IdeaProjects\market-ms\auth-service\src\main\resources" />
+      <recent name="C:\IdeaProjects\market-ms\front-service\src\main\resources" />
+      <recent name="C:\IdeaProjects\market-ms\gateway-service\src\main\resources" />
+      <recent name="C:\IdeaProjects\market-ms\gateway-service\src\main\resources\ru.pb.market.gateway" />
       <recent name="C:\IdeaProjects\market-ms\core-service\src\main\resources\db" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ru.pb.market.auth.configs" />
+      <recent name="ru.pb.market.front" />
+      <recent name="ru.pb.market.gateway.configs" />
       <recent name="market.integrations" />
       <recent name="ru.pb.market.exceptions" />
-      <recent name="ru.pb.market" />
-      <recent name="ru.pb.market.utils" />
-      <recent name="ru.pb.market.configs" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -107,7 +180,20 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.MarketCoreApplication">
+  <component name="RunManager" selected="Spring Boot.MarketFrontApplication">
+    <configuration name="MarketAuthApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="auth-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ru.pb.market.auth.MarketAuthApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ru.pb.market.auth.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MarketCartApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="cart-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="ru.pb.market.MarketCartApplication" />
@@ -134,10 +220,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MarketFrontApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="front-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ru.pb.market.front.MarketFrontApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MarketGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="gateway-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ru.pb.market.gateway.MarketGatewayApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.MarketCoreApplication" />
         <item itemvalue="Spring Boot.MarketCartApplication" />
+        <item itemvalue="Spring Boot.MarketAuthApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -151,7 +252,9 @@
       <updated>1670242142019</updated>
       <workItem from="1670242143543" duration="9123000" />
       <workItem from="1670319109474" duration="3876000" />
-      <workItem from="1670398982287" duration="11205000" />
+      <workItem from="1670398982287" duration="12698000" />
+      <workItem from="1670523702268" duration="11721000" />
+      <workItem from="1670569867612" duration="4665000" />
     </task>
     <task id="LOCAL-00001" summary="корзина в отдельном сервисе">
       <created>1670408124854</created>
@@ -160,7 +263,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670408124855</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="корзина в отдельном сервисе">
+      <created>1670420654398</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1670420654398</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,17 +302,6 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="корзина в отдельном сервисе" />
     <option name="LAST_COMMIT_MESSAGE" value="корзина в отдельном сервисе" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/cart-service/src/main/java/ru/pb/market/utils/JwtTokenUtil.java</url>
-          <line>62</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

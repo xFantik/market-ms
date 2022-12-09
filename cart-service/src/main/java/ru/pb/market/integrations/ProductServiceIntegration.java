@@ -17,6 +17,7 @@ public class ProductServiceIntegration {
     private static final String URI = "http://localhost:8189/market-core/api/v1/products/";
 
     public ProductDto findById(Long id) {
+
         return restTemplate.getForObject(URI + id, ProductDto.class);
     }
 
