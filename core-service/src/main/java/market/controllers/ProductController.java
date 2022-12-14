@@ -6,9 +6,12 @@ import market.entities.Product;
 import market.services.ProductService;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
+import org.yaml.snakeyaml.util.ArrayUtils;
 import ru.pb.market.ProductDto;
+import ru.pb.market.ProductListRequest;
 
 
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -53,21 +56,15 @@ public class ProductController {
         return productService.getAllProducts();
     }
 
-//    @PostMapping("/list")
-//    public  void getListByIds(@RequestBody List<ProductListRequest> list){
-//        System.out.println(list);
-//
-//        for (ProductListRequest aLong : list) {
-//            System.out.println(aLong.getValue());
-//        }
-//        return null;
-
-//        pr.getIds();
-//        System.out.println( pr.getIds());
-//        return productService.getProductsByIdIn(( pr.getIds()));
-
-
-//    }
-
+    @GetMapping("/list")
+    public List<ProductDto> getListByIds(@RequestBody Long[] list){
+        List<ProductDto> t = productService.getProductsByIdIn(list);
+        System.out.print("Отдали список продуктов: ");
+        for (ProductDto productDto : t) {
+            System.out.print(productDto.getTitle()+" ");
+        }
+        System.out.println();
+        return productService.getProductsByIdIn(list);
+    }
 
 }
