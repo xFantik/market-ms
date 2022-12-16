@@ -36,7 +36,8 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler
-    public ResponseEntity<AppError> emptyCart(EmptyCartException e){
+    public ResponseEntity<AppError> runtimeException(RuntimeException e){
         return new ResponseEntity<>(new AppError(HttpStatus.BAD_REQUEST.value(), e.getMessage()), HttpStatus.BAD_REQUEST);
     }
+
 }

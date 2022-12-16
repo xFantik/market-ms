@@ -45,7 +45,7 @@ public class OrderService {
 
     @Transactional
     public List<ProductInCartDto> get(Long orderId) {
-        Order o = orderRepository.getById(orderId);
+        Order o = orderRepository.findById(orderId).orElseThrow(()->new RuntimeException(String.format("Заказ с id %d не найден", orderId)));
         List<OrderProduct> orderProducts = o.getOrderProducts();
 
         List<ProductInCartDto> productsDto = orderProducts.stream()
