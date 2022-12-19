@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import market.entities.Product;
 import market.services.ProductService;
 import org.springframework.data.domain.Page;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.yaml.snakeyaml.util.ArrayUtils;
 import ru.pb.market.ProductDto;
@@ -35,6 +36,7 @@ public class ProductController {
 
 
     @PostMapping("")
+    @ResponseStatus(HttpStatus.CREATED)
     public void addProduct(@RequestBody ProductDto productDto) {
         productService.addProduct(productDto);
     }
