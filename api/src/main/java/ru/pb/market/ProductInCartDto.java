@@ -39,5 +39,16 @@ public class ProductInCartDto {
 
     public ProductInCartDto() {
     }
+
+
+    @Override
+    public String toString() {
+        return "ProductInCartDto{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", price=" + price +
+                ", count=" + count +
+                '}';
+    }
 }
 

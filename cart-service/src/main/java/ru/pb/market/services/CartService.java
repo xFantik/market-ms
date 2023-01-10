@@ -33,11 +33,11 @@ public class CartService {
 
     public void addProduct(String username, long productId, int count) {
         HashMap<Long, Integer> products = getCart(username);
-        log.info("Добавили в корзину {} {}", count, productServiceIntegration.findById(productId).getTitle());
+     //   log.info("Добавили в корзину {} {}", count, productServiceIntegration.findById(productId).getTitle());
         products.put(productId, products.getOrDefault(productId, 0) + count);
         if (products.get(productId) <= 0) {
             products.remove(productId);
-            log.info("В корзине не осталось {}, убрали совсем", productServiceIntegration.findById(productId).getTitle());
+       //     log.info("В корзине не осталось {}, убрали совсем", productServiceIntegration.findById(productId).getTitle());
         }
     }
 
@@ -50,10 +50,10 @@ public class CartService {
     public void removeProduct(String username, long productId, int count) {
         HashMap<Long, Integer> products = getCart(username);
         products.put(productId, products.getOrDefault(productId, 0) - count);
-        log.info("Убрали из корзины {} {}", count, productServiceIntegration.findById(productId).getTitle());
+     //   log.info("Убрали из корзины {} {}", count, productServiceIntegration.findById(productId).getTitle());
         if (products.get(productId) <= 0) {
             products.remove(productId);
-            log.info("В корзине не осталось {}, убрали совсем", productServiceIntegration.findById(productId).getTitle());
+       //     log.info("В корзине не осталось {}, убрали совсем", productServiceIntegration.findById(productId).getTitle());
         }
     }
 
@@ -62,6 +62,7 @@ public class CartService {
 
         Long[] ids = new Long[products.size()];
         products.keySet().toArray(ids);
+
 
         List<ProductInCartDto> productsByIdIn = productServiceIntegration.getProductsByIdIn(ids).stream().
                 map(productDto -> new ProductInCartDto(productDto.getId(), productDto.getTitle(), productDto.getPrice(), products.get(productDto.getId())))

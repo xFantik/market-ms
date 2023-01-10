@@ -4,18 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="da06fda5-32e4-45fa-acd3-91022afbbe5f" name="Changes" comment="Разделено на сервисы:&#10;auth&#10;cart&#10;core&#10;gateway&#10;front">
-      <change afterPath="$PROJECT_DIR$/cart-service/src/main/java/ru/pb/market/properties/ProductServiceIntegrationProperties.java" afterDir="false" />
+    <list default="true" id="da06fda5-32e4-45fa-acd3-91022afbbe5f" name="Changes" comment="Сервис интеграции продуктов: получение списка продуктов одним запросом&#10;Фронт: убрана отрисовка пустой корзины.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/ru/pb/market/auth/configs/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/ru/pb/market/auth/configs/AppConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart-service/src/main/java/ru/pb/market/configs/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/src/main/java/ru/pb/market/configs/AppConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart-service/src/main/java/ru/pb/market/integrations/ProductServiceIntegration.java" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/src/main/java/ru/pb/market/integrations/ProductServiceIntegration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/config/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/java/market/config/AppConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/controllers/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/java/market/controllers/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/integrations/CartServiceIntegration.java" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/java/market/integrations/CartServiceIntegration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/exceptions/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/java/market/exceptions/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core-service/src/main/java/market/services/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/core-service/src/main/java/market/services/OrderService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,6 +77,9 @@
     &quot;spring.configuration.checksum&quot;: &quot;e1a83eef63766673ac5f9d4d785eb2f3&quot;
   }
 }</component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\IdeaProjects\market-ms\core-service\src\main\java\market" />
@@ -115,7 +110,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.MarketFrontApplication">
+  <component name="RunManager" selected="Spring Boot.MarketCartApplication">
     <configuration name="MarketAuthApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="auth-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="ru.pb.market.auth.MarketAuthApplication" />
@@ -194,6 +189,7 @@
       <workItem from="1670613064017" duration="672000" />
       <workItem from="1670772952210" duration="3717000" />
       <workItem from="1670870990253" duration="669000" />
+      <workItem from="1671040851542" duration="9844000" />
     </task>
     <task id="LOCAL-00001" summary="корзина в отдельном сервисе">
       <created>1670408124854</created>
@@ -216,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670577707774</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Сервис интеграции продуктов: получение списка продуктов одним запросом&#10;Фронт: убрана отрисовка пустой корзины.">
+      <created>1671050132054</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1671050132054</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,7 +251,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="корзина в отдельном сервисе" />
     <MESSAGE value="Разделено на сервисы:&#10;auth&#10;cart&#10;core&#10;gateway&#10;front" />
-    <option name="LAST_COMMIT_MESSAGE" value="Разделено на сервисы:&#10;auth&#10;cart&#10;core&#10;gateway&#10;front" />
+    <MESSAGE value="Сервис интеграции продуктов: получение списка продуктов одним запросом&#10;Фронт: убрана отрисовка пустой корзины." />
+    <option name="LAST_COMMIT_MESSAGE" value="Сервис интеграции продуктов: получение списка продуктов одним запросом&#10;Фронт: убрана отрисовка пустой корзины." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

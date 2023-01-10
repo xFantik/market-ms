@@ -32,4 +32,14 @@ public class ProductDto {
     public boolean isActive() {
         return active;
     }
+
+    @Override
+    public String toString() {
+        return "ProductDto{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", price=" + price +
+                ", active=" + active +
+                '}';
+    }
 }

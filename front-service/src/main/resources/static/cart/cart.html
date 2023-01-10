@@ -1,7 +1,9 @@
 <div>
     <p></p>
-    <h3>Корзина</h3>
-    <table class="table">
+    <h5 ng-show="!total">Корзина пустая</h5>
+    <a class="nav-link"  ng-show="!total" href="#!/store">Перейти в каталог</a>
+    <h3 ng-show="total">Корзина</h3>
+    <table class="table" ng-show="total">
         <thead>
         <tr>
             <td>Название</td>
